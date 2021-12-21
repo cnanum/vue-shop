@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 import {getProducts, getProducts2} from './services/products';
+import Nav from './components/Nav.vue';
+import Footer from './components/Footer.vue';
+import About from './components/About.vue';
 
 // const users2 = ref([
 //   {"id": 1, "name": "홍길동", "age": 22},
@@ -41,15 +44,14 @@ loadProducts()
 </script>
 
 <template>
-  <div class="bg-gray-200 p-8 m-8 rounded-lg flex gap-8">
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/products">Go to Products</router-link>
-  </div>
+  <Nav />
 
   <section class="bg-gray-100 p-8 m-8 rounded-lg">
     <router-view></router-view>
   </section>
 
+  <About />
+  <Footer />
 </template>
 
 <style>
