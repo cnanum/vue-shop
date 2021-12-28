@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import {useStore} from 'vuex';
+import {computed} from 'vue';
+
+const store = useStore();
+const cart = computed(() => store.state.cart)
 
 </script>
 
@@ -19,7 +24,7 @@
         <nav>
           <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
             <li><router-link class="inline-block no-underline hover:text-black hover:underline py-2 px-4" to="/">Home</router-link></li>
-            <li><router-link class="inline-block no-underline hover:text-black hover:underline py-2 px-4" to="/products">Products</router-link></li>
+            <li><router-link class="inline-block no-underline hover:text-black hover:underline py-2 px-4" to="/products">Products(carts: {{cart.length}})</router-link></li>
           </ul>
         </nav>
       </div>

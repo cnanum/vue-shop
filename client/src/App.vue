@@ -39,7 +39,7 @@ const products = ref<any[]>([])
 async function loadProducts() {
   products.value = await getProducts()
 }
-loadProducts()
+// loadProducts()
 
 </script>
 
