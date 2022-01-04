@@ -1,11 +1,12 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 import './style.css'
-import {createRouter, createWebHashHistory} from 'vue-router';
+import {createRouter, createWebHistory} from 'vue-router';
 import Home from './views/Home.vue'
 import Products from './views/Products.vue'
 import Product from './views/Product.vue'
-import { createStore } from 'vuex'
+import Register from './views/Register.vue'
+import {createStore} from 'vuex'
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -14,11 +15,12 @@ const routes = [
   { path: '/', component: Home },
   { path: '/products', component: Products },
   { path: '/product', component: Product },
+  { path: '/register', component: Register },
 ]
 
 const router = createRouter({
   // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes, // short for `routes: routes`
 })
 

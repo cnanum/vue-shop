@@ -69,5 +69,13 @@
       "id": "1",
       "qty": 1
     }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "userName": "user01",
+      "email": "user01@test.com",
+      "password": "1234"
+    }
   ]
 }
