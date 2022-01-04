@@ -27,7 +27,7 @@ const router = createRouter({
 const store = createStore<{cart: string[]}>({
   state () {
     return {
-      cart: ['2', '3'],
+      cart: [],
     }
   },
   mutations: {

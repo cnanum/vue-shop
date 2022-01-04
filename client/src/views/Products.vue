@@ -57,7 +57,7 @@ loadProducts()
         <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col"
              v-for="(prd, index) in products" :key="prd.id">
           <router-link :to="`/product?id=${prd.id}`">
-            <img class="hover:grow hover:shadow-lg" :src="prd.imgUrl">
+            <img class="hover:grow hover:shadow-lg" :src="prd.imgUrl || 'https://via.placeholder.com/293x293'">
             <div class="pt-3 flex items-center justify-between">
               <p class="">{{index+1}}. {{prd.name}}</p>
               <svg class="h-6 w-6 fill-current text-gray-500"
