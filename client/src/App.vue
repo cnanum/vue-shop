@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import {ref} from 'vue';
-import {getProducts, getProducts2} from './services/products';
+import {onMounted, ref} from 'vue';
+import {CartItem, getAllCartItems, getProducts, getProducts2} from './services/products';
 import Nav from './components/Nav.vue';
 import Footer from './components/Footer.vue';
 import About from './components/About.vue';
+import {useStore} from 'vuex';
 
 // const users2 = ref([
 //   {"id": 1, "name": "홍길동", "age": 22},
@@ -34,12 +35,24 @@ import About from './components/About.vue';
 //
 // loadUsers();
 
+const store = useStore();
 const products = ref<any[]>([])
+const carts = ref<CartItem[]>([])
 
 async function loadProducts() {
   products.value = await getProducts()
 }
 // loadProducts()
+
+async function loadCarts() {
+  carts.value = await getAllCartItems();
+
+  carts.value.forEach(({id}) => store.commit('toggleItem', id))
+}
+
+onMounted(() => {
+  loadCarts();
+})
 
 </script>
 

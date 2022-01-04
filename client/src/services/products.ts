@@ -42,6 +42,11 @@ async function addProduct4Axios(product: Product) {
     },
   });
 }
+async function getProduct2(id: string) {
+  const res = await fetch(`http://localhost:3002/product/${id}`)
+  return await res.json();
+}
+
 async function addItemToCart(item: CartItem) {
   return await axios.post('http://localhost:3002/cart', item,{
     headers: {
@@ -50,10 +55,21 @@ async function addItemToCart(item: CartItem) {
   });
 }
 
-async function getProduct2(id: string) {
-  const res = await fetch(`http://localhost:3002/product/${id}`)
-  return await res.json();
+async function getAllCartItems(): Promise<CartItem[]> {
+  const res = await axios.get('http://localhost:3002/cart')
+  return res.data as CartItem[];
 }
+
+async function deleteCartItem(id: string) {
+  try {
+    await axios.delete(`http://localhost:3002/cart/${id}`)
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+
 
 export {
   getProducts,
@@ -62,4 +78,6 @@ export {
   addProduct,
   addProduct4Axios,
   addItemToCart,
+  getAllCartItems,
+  deleteCartItem,
 }
