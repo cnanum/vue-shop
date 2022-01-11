@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "json-server --watch db.json",
+    "dev": "json-server --watch db.json --port 3000",
     "dev:khh": "json-server --watch db_khh.json --port 3001",
     "dev:jdy": "json-server --watch db_jdy.json --port 3002"
   },

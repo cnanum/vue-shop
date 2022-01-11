@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "홍길동",
+      "email": "",
       "age": 22
     },
     {
@@ -29,6 +30,18 @@
       "name": "바붕이",
       "age": 99,
       "id": 6
+    },
+    {
+      "name": "user01",
+      "email": "user01@vueshop.com",
+      "pw": "user01",
+      "id": 7
+    },
+    {
+      "name": "user02",
+      "email": "u2@test.com",
+      "password": "1111",
+      "id": 8
     }
   ],
   "abc": [
